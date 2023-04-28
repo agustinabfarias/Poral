@@ -13,7 +13,7 @@ while(pregunta == true){
         alert("Ingrese un dato valido")
     }else{
         orden()
-        cantidad ++ //me gustaría que se pueda sumar el total de todas los productos pero no me estaría saliendo, ¿cómo puedo hacerzx
+        cantidad ++ //me gustaría que se pueda sumar el total de todas los productos y se mostraran al final como "ordenaste 80 productos" que serían todos los que el usuario puso sumandose. Se hacer sumas, pero ¿cómo podria hacer para sumar todas las respuestas que hace el usuario?
     }
     pregunta = confirm("¿desea agregar otro producto?")
 }
