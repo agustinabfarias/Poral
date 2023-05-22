@@ -102,7 +102,7 @@ while(otroProducto== true){
     nuevoProducto
     orden();
     confirm("desea agregar otro producto?")
-}
+} //se que el while debería estar arriba y la funcion adentro pero quería ver si la funcion funcionaba por si sola.
 
 carrito.forEach((item)=>{
     console.log(item)   
