@@ -23,104 +23,92 @@
 
 /* ---------------ENTREGA 2 -----------------------------------*/
 
-const productos = [ 
-    {nombre:"camisa azul" , precio: 8000},
-    {nombre:"camisa verde" , precio: 8500},
-    {nombre:"jeans" , precio: 10000},
-    {nombre:"mom jeans" , precio: 12000},
-    {nombre:"zapatos" , precio: 15000},
-    {nombre:"gorra" , precio: 5000},
-]
-
-
-
-let producto = prompt("ingrese que producto busca")
-const buscados = productos. filter((item)=> item.nombre.includes(producto));
-
-buscados.forEach((item)=>{ 
-    let mensaje = `
-    producto: ${item.nombre}
-    precio: ${item.precio}    
-    `;
-    alert(mensaje)//como podría hacer para que, si hay dos productos, se pongan en el mismo alert usando concat o alert? 
-
-});
-
-let misProductos = confirm("desea agregar productos al carrito?")
-
-class ProductoUsuario {
+const productos = [
+    { nombre: "camisa azul", precio: 8000 },
+    { nombre: "camisa verde", precio: 8500 },
+    { nombre: "jeans", precio: 10000 },
+    { nombre: "mom jeans", precio: 12000 },
+    { nombre: "zapatos", precio: 15000 },
+    { nombre: "gorra", precio: 5000 },
+  ];
+  
+  let producto = prompt("Ingrese qué producto busca");
+  const buscados = productos.filter((item) => item.nombre.includes(producto));
+  
+  buscados.forEach((item) => {
+    let mensaje = `Producto: ${item.nombre}\nPrecio: ${item.precio}`;
+    alert(mensaje);
+  });
+  
+  let misProductos = confirm("¿Desea agregar productos al carrito?");
+  
+  class ProductoUsuario {
     constructor(nombre, precio) {
       this.nombre = nombre;
       this.precio = precio;
     }
   }
   
-// const gorra = new ProductoUsuario('gorra', 5000);
-//   const jeans = new ProductoUsuario('jeans', 10000);
-//   const momJeans = new ProductoUsuario('mom jeans', 12000);
-//   const camisaVerde = new ProductoUsuario('camisa Verde', 8500);
-//   const camisaAzul = new ProductoUsuario('camisa azul', 8000);
-//   const zapatos = new ProductoUsuario('zapatos', 15000);
-
-const carrito = [];
-let nuevoProducto = prompt("ingrese el producto")
-orden();
-
-function orden(){
-    switch (nuevoProducto == true){
-        case 'gorra':
-            let gorra = new ProductoUsuario('gorra', 5000);
-            carrito.push(gorra)
+  const carrito = [];
+  
+  function orden() {
+    switch (nuevoProducto) {
+      case "gorra":
+        let gorra = new ProductoUsuario("gorra", 5000);
+        carrito.push(gorra);
         break;
-        case 'jeans':
-            const jeans = new ProductoUsuario('jeans', 10000);
-            carrito.push(jeans)
+      case "jeans":
+        const jeans = new ProductoUsuario("jeans", 10000);
+        carrito.push(jeans);
         break;
-        case 'mom jeans':
-            const momJeans = new ProductoUsuario('mom jeans', 12000);
-            carrito.push(momJeans)
+      case "mom jeans":
+        const momJeans = new ProductoUsuario("mom jeans", 12000);
+        carrito.push(momJeans);
         break;
-        case 'camisa azul':
-            const camisaAzul = new ProductoUsuario('camisa azul', 8000);
-            carrito.push(camisaAzul)
+      case "camisa azul":
+        const camisaAzul = new ProductoUsuario("camisa azul", 8000);
+        carrito.push(camisaAzul);
         break;
-        case 'camisa verde':
-            const camisaVerde = new ProductoUsuario('camisa Verde', 8500);
-            carrito.push(camisaVerde)
+      case "camisa verde":
+        const camisaVerde = new ProductoUsuario("camisa verde", 8500);
+        carrito.push(camisaVerde);
         break;
-        case 'zapatos':
-            const zapatos = new ProductoUsuario('zapatos', 15000);
-            carrito.push(zapatos)
+      case "zapatos":
+        const zapatos = new ProductoUsuario("zapatos", 15000);
+        carrito.push(zapatos);
         break;
     }
-
-    console.log(carrito)
-}
-
-let otroProducto = confirm("desea agregar otro producto?")
-while(otroProducto== true){
-    nuevoProducto
+  }
+  
+  let nuevoProducto = prompt("Ingrese el producto");
+  orden();
+  
+  let otroProducto = confirm("¿Desea agregar otro producto?");
+  while (otroProducto) {
+    nuevoProducto = prompt("Ingrese el producto");
     orden();
-    confirm("desea agregar otro producto?")
-} //se que el while debería estar arriba y la funcion adentro pero quería ver si la funcion funcionaba por si sola.
-
-carrito.forEach((item)=>{
-    console.log(item)   
-}) 
-let total = carrito.reduce((acum, item) => acum + item.precio, 0);
-let todosLosProductos = console.log(`el total es ${total}`)
-
- let vaciar = confirm("desea vaciar carrito?")
-    if (vaciar === true){
-        vaciarCarrito()
-        alert("no hay nada en el carrito")
-  }else{
-    alert("gracias por visitar Poral")
-}
-
- function vaciarCarrito() {
-     carrito = [];
- }
+    otroProducto = confirm("¿Desea agregar otro producto?");
+  }
+  
+  carrito.forEach((item) => {
+    console.log(item);
+  });
+    let total = carrito.reduce((acum, item) => acum + item.precio, 0);
+    alert(`El total es ${total}`);
+//   let total = carrito.reduce((acum, item) => acum + item.precio, 0);
+//   console.log(`El total es ${total}`);
+  
+  let vaciar = confirm("¿Desea vaciar el carrito?");
+  if (vaciar) {
+    vaciarCarrito();
+    alert("No hay nada en el carrito");
+  } else {
+    alert("Gracias por visitar Poral");
+  }
+  
+  function vaciarCarrito() {
+    carrito.length = 0;
+  }
 
 
 
