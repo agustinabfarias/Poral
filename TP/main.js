@@ -50,17 +50,15 @@ const agregarAlCarrito = (productoId) => {
 
 // Cargar carrito del localStorage
 carrito = carritoStorage;
-
+console.log(carrito)
 
 // //vaciar el carrito
 vaciar.addEventListener("click", () => {
   localStorage.clear();
-  
+  console.clear();
   alert("carrito eliminado");
   location.reload(); 
   });
-
-
 
 
 
