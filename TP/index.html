@@ -12,18 +12,22 @@
     <title>Poral</title>
 </head>
 <body>
-    
-    <h1 class="titulo1">Poral</h1>
-    <h3 id="titulo3">No te pierdas nuestra nueva Colección S2023</h3>
+    <header>
+        <div class="titulos">
+        <h1 class="titulo1">Poral</h1>
+        <h3 id="titulo3">No te pierdas nuestra nueva Colección S2023</h3>
+        </div>
+    </header>
+    <div id="contenedor-carrito">
+        <h3>Carrito<span id="contadorCarrito"> (0)</span></h3>  
+        <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+        <button id="eliminar">Vaciar Carrito</button>
+    </div>
     <main id="contenedor">
         
         <h4>Productos</h4>
         <div id="contenedor-productos"></div>
-        <h3>Carrito</h3>
-        <div id="contenedor-carrito">
-            
-        </div>
-        <button id="eliminar">Eliminar Carrito</button>
+        
         <script src="./main.js"></script>
     </main>
     
