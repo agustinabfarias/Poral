@@ -1,0 +1,8 @@
+[
+    { "id": 1, "nombre": "Remera Aeropostale", "precio": 8000, "img": "./img/remera-aeropostale.jpg" },
+    { "id": 2, "nombre": "Top Nike", "precio": 8500, "img": "./img/top-nike.jpg" },
+    { "id": 3, "nombre": "Buzo Levis", "precio": 12000, "img": "./img/buzo-levis.jpg" },
+    { "id": 4, "nombre": "Campera de Jean", "precio": 32000, "img": "./img/campera-jean.jpg" },
+    { "id": 5, "nombre": "Botas Alanya", "precio": 18000, "img": "./img/botas.jpeg" },
+    { "id": 6, "nombre": "Blazer", "precio": 35000, "img": "./img/blazer.jpg" }
+]
