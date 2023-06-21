@@ -53,6 +53,19 @@ const stockProductos = async () => {
         
           boton.addEventListener('click', () => {
             agregarAlCarrito(post.id)
+            Swal.fire({
+              title: '¡Producto Agregado al carrito!',
+              showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+              },
+              hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+              },
+              confirmButtonColor: '#7e8a59', 
+              customClass: {
+                title: 'titulo-sweetAlert' 
+              }
+            })
           })
     });
   } catch (error) {
@@ -87,10 +100,27 @@ console.log(carrito)
 
 //vaciar el carrito
 vaciar.addEventListener("click", () => {
-  localStorage.clear();
-  console.clear();
-  alert("carrito eliminado");
-  location.reload(); 
+  Swal.fire({
+    title: '¿Está seguro de vaciar el carrito?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#7e8a59',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Vaciar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        {confirmButtonColor: '#7e8a59',
+        title: 'Carrito vacío.'}
+      )
+    }
+    setTimeout(()=>{
+      localStorage.clear();
+      console.clear();
+      location.reload(); 
+    }, 2500)
+  })
+
   });
 
 

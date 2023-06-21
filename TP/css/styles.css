@@ -77,3 +77,9 @@ h4{
     align-items: center;
     padding: 2%;
 }
+
+
+.titulo-sweetAlert{
+    font-size: 26px;
+    font-family: 'Open Sans';
+}
