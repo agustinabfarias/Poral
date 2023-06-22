@@ -41,11 +41,14 @@ const stockProductos = async () => {
     data.forEach((post) => {
       let div = document.createElement("div"); 
       div.innerHTML = ` 
-          <img src=${post.img} alt= "">
-          <h3> ${post.nombre}</h3>
-          <b class="precio-producto">$${post.precio}</b>
-          <button id="agregar${post.id}" class="boton-agregar">Agregar</button>
-          <hr />
+          <div class="card" style="width: 18rem;">
+          <img src="${post.img}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> ${post.nombre} </h5>
+            <b class="card-text" class="precio-producto">$${post.precio}</b>
+            <button id="agregar${post.id}" class="btn btn-success">Agregar</button>
+          </div>
+          </div>
           `;
           contenedorProductos.append(div); 
 
@@ -74,6 +77,107 @@ const stockProductos = async () => {
 };
 
 stockProductos();
+
+//filtros
+
+const btnRadio1 = document.getElementById("btnradio1");
+const btnRadio2 = document.getElementById("btnradio2");
+const btnRadio3 = document.getElementById("btnradio3");
+const btnRadio4 = document.getElementById("btnradio4");
+
+btnRadio1.addEventListener('click', () => {
+  mostrarProductos();
+});
+
+
+btnRadio2.addEventListener('click', () => {
+  filtrarProductos("top-remera");
+});
+
+btnRadio3.addEventListener('click', () => {
+  filtrarProductos("invierno");
+});
+
+btnRadio4.addEventListener('click', () => {
+  filtrarProductos("zapatos");
+});
+
+function filtrarProductos(etiqueta) {
+  const filtro = data.filter(item => item.etiqueta === etiqueta);
+  contenedorProductos.innerHTML = '';
+  
+  filtro.forEach((post) => {
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <div class="card" style="width: 18rem;">
+        <img src="${post.img}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${post.nombre}</h5>
+          <b class="card-text precio-producto">$${post.precio}</b>
+          <button id="agregar${post.id}" class="btn btn-success">Agregar</button>
+        </div>
+      </div>
+    `;
+    contenedorProductos.append(div);
+
+    const boton = document.getElementById(`agregar${post.id}`);
+    boton.addEventListener('click', () => {
+      agregarAlCarrito(post.id);
+      Swal.fire({
+        title: '¡Producto Agregado al carrito!',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        },
+        confirmButtonColor: '#7e8a59',
+        customClass: {
+          title: 'titulo-sweetAlert'
+        }
+      });
+    });
+  });
+}
+
+
+function mostrarProductos() {
+  contenedorProductos.innerHTML = '';
+
+  data.forEach((post) => {
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <div class="card" style="width: 18rem;">
+        <img src="${post.img}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${post.nombre}</h5>
+          <b class="card-text precio-producto">$${post.precio}</b>
+          <button id="agregar${post.id}" class="btn btn-success">Agregar</button>
+        </div>
+      </div>
+    `;
+    contenedorProductos.append(div);
+
+    const boton = document.getElementById(`agregar${post.id}`);
+    boton.addEventListener('click', () => {
+      agregarAlCarrito(post.id);
+      Swal.fire({
+        title: '¡Producto Agregado al carrito!',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        },
+        confirmButtonColor: '#7e8a59',
+        customClass: {
+          title: 'titulo-sweetAlert'
+        }
+      });
+    });
+  });
+}
+
 
 
 

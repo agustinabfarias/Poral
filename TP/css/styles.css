@@ -1,8 +1,12 @@
 body{
     font-family: 'Open Sans', sans-serif;
     justify-content: center;
-    background-color: #7e8a59;
+    /* background-color: #7e8a59; */
 }
+
+.custom-background {
+    background-color: #c0c7ab;
+  }
 
 img{
     width: 220px;
@@ -17,7 +21,7 @@ hr{
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+
 }
 .titulos h1{
     font-size: 80px;
@@ -30,19 +34,27 @@ header {
     justify-content: center;
     align-items: center;
     box-shadow: 0px 5px 4px 3px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
-    
+    margin-bottom: 40px;
+    justify-content: space-between;
+    padding-left: 500px;
+}
+
+.header-background{
+    background-color: #8c976c;
 }
 
 #contenedor-carrito{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    margin-left: 1300px;
-    padding: none;
-    
-
+    justify-content: space-between;
+    /* margin-right: 20px; */
+    padding: 20px;
+    /* align-items: end; */
+    background-color: #CEDAD2; 
+    margin-left: 89%;
 }
+
+
 #eliminar{
     width: 100px;
 }
@@ -70,7 +82,7 @@ h4{
 
 #contenedor-productos div{
     display: flex;
-    background-color: white;
+    /* background-color: white; */
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
@@ -82,4 +94,8 @@ h4{
 .titulo-sweetAlert{
     font-size: 26px;
     font-family: 'Open Sans';
+}
+
+.d-flex{
+    padding: 2%;
 }

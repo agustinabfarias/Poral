@@ -9,27 +9,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Poral</title>
 </head>
-<body>
-    <header>
+<body class="custom-background">
+    <header class="header-background">
         <div class="titulos">
         <h1 class="titulo1">Poral</h1>
         <h3 id="titulo3">No te pierdas nuestra nueva Colección S2023</h3>
         </div>
+
     </header>
-    <div id="contenedor-carrito">
+    <div id="contenedor-carrito"  class="bg-white col-md-2 offset-md-6 float-right">
         <h3>Carrito (<span id="contadorCarrito"> 0</span>)</h3>  
         <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
-        <button id="eliminar">Vaciar Carrito</button>
+        <button id="eliminar" class="btn btn-danger" >Vaciar</button>
     </div>
     <main id="contenedor">
-        
-        <h4>Productos</h4>
+        <h4 class="display-4">Productos</h4>
+        <div class="d-flex justify-content-center" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="btnradio1">Todo</label>
+          
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio2">Tops</label>
+          
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio3">Abrigos</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio4">Zapatos</label>
+          </div>
         <div id="contenedor-productos"></div>    
     </main>
 
     <script src="./main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>    
 </body>
